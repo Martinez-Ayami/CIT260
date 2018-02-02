@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,7 @@ public class Location implements Serializable{
     private double position;
     private double visited;
     private double amountRemaining;
+    private ArrayList<Actor> actors = new ArrayList<Actor>();
 
     public Location() {
     }
@@ -47,6 +49,16 @@ public class Location implements Serializable{
         this.amountRemaining = amountRemaining;
     }
 
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;

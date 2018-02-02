@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,7 @@ public class InventoryItem implements Serializable{
     private String qualityStock;
     private double requiredAmount;
     private Game game;
+    private ArrayList<ResourcesScene> resourcesScenes = new ArrayList<ResourcesScene>();
 
     public InventoryItem() {
     }
@@ -53,6 +55,14 @@ public class InventoryItem implements Serializable{
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public ArrayList<ResourcesScene> getResourcesScenes() {
+        return resourcesScenes;
+    }
+
+    public void setResourcesScenes(ArrayList<ResourcesScene> resourcesScenes) {
+        this.resourcesScenes = resourcesScenes;
     }
 
     

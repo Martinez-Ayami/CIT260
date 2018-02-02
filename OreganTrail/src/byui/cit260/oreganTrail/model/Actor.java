@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,8 @@ public class Actor implements Serializable{
     private String description;
     private double health;
     private Game game;
+    private ArrayList<Player> players = new ArrayList<Player>();
+    private ArrayList<Location> locations = new ArrayList<Location>();
 
     public Actor() {
     }
@@ -54,6 +57,22 @@ public class Actor implements Serializable{
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
     }
 
     

@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,8 @@ public class Question implements Serializable{
     
     private String question;
     private double answer;
+    private ArrayList<QuestionScene> questionScenes = new ArrayList<QuestionScene>();
+    
 
     public Question() {
     }
@@ -38,6 +41,16 @@ public class Question implements Serializable{
         this.answer = answer;
     }
 
+    public ArrayList<QuestionScene> getQuestionScenes() {
+        return questionScenes;
+    }
+
+    public void setQuestionScenes(ArrayList<QuestionScene> questionScenes) {
+        this.questionScenes = questionScenes;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
