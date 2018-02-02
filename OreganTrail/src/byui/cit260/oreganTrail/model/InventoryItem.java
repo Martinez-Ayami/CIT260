@@ -16,6 +16,7 @@ public class InventoryItem implements Serializable{
     private String inventoryType;
     private String qualityStock;
     private double requiredAmount;
+    private Game game;
 
     public InventoryItem() {
     }
@@ -46,6 +47,16 @@ public class InventoryItem implements Serializable{
         this.requiredAmount = requiredAmount;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;

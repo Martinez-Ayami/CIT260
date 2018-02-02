@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList; //I added this due to an error - Ayami
 import java.util.Objects;
 
 /**
@@ -16,7 +17,8 @@ public class Player implements Serializable{
     //class instance variable
     private String name;
     private double bestTime;
-    private ArrayList<Game> games =new ArrayList<game>();
+    private ArrayList<Game> games = new ArrayList<Game>();
+    private Actor actor;
     
     public Player() {
     }
@@ -39,6 +41,24 @@ public class Player implements Serializable{
         this.bestTime = bestTime;
     }
 
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;

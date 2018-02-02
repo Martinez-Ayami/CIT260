@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class ResourcesScene implements Serializable{
     private String amount;
+    private InventoryItem inventoryItem;
 
     public ResourcesScene() {
     }
@@ -27,6 +28,16 @@ public class ResourcesScene implements Serializable{
         this.amount = amount;
     }
 
+    public InventoryItem getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

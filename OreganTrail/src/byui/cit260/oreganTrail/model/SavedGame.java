@@ -6,6 +6,7 @@
 package byui.cit260.oreganTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -15,6 +16,7 @@ import java.util.Objects;
  */
 public class SavedGame implements Serializable{
     private String date;
+    private ArrayList<SavedGame> savedGames = new ArrayList<SavedGame>();
 
     public SavedGame() {
     }
@@ -28,6 +30,16 @@ public class SavedGame implements Serializable{
         this.date = date;
     }
 
+    public ArrayList<SavedGame> getSavedGames() {
+        return savedGames;
+    }
+
+    public void setSavedGames(ArrayList<SavedGame> savedGames) {
+        this.savedGames = savedGames;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;
