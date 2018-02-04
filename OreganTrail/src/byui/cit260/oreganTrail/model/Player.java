@@ -19,12 +19,13 @@ public class Player implements Serializable{
     private double bestTime;
     private ArrayList<Game> games = new ArrayList<Game>();
     private Actor actor;
+ 
+        public Player(){
+       
+        }
     
-    public Player() {
-    }
     
-    
-
+   
     public String getName() {
         return name;
     }
@@ -93,5 +94,5 @@ public class Player implements Serializable{
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
 
-     
+
 }
