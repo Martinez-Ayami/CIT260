@@ -5,6 +5,8 @@
  */
 package oregantrail;
 
+import byui.cit260.oreganTrail.model.Player;
+
 /**
  *
  * @author Randy ther Master
@@ -16,6 +18,12 @@ public class OreganTrail {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player playerOne = new Player();
+        playerOne.setName("Ayami Martinez");
+        playerOne.setBestTime(7.00);
+        
+        
+        System.out.println(playerOne);
     }
     
 }

@@ -20,6 +20,7 @@ public class Player implements Serializable{
     private ArrayList<Game> games = new ArrayList<Game>();
     private Actor actor;
  
+        //Default Constructor
         public Player(){
        
         }
@@ -57,8 +58,6 @@ public class Player implements Serializable{
     public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
-
-    
     
     @Override
     public int hashCode() {

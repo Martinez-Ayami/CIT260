@@ -8,7 +8,7 @@ package byui.cit260.oreganTrail.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
-import byui.cit260.oreganTrail.model.Player
+import byui.cit260.oreganTrail.model.Player;
 
 /**
  *
@@ -16,7 +16,7 @@ import byui.cit260.oreganTrail.model.Player
  */
 public class Game implements Serializable{
     //class instance variables
-    private String totalTime ;
+    private String totalTime;
     private double noPeople;
     private Player player;
     private Map map;
@@ -24,32 +24,11 @@ public class Game implements Serializable{
     private ArrayList<Actor> actors = new ArrayList<Actor>();
     private ArrayList<InventoryItem> inventoryItems = new ArrayList<InventoryItem>();
 
-    
-      
-        
-    
+
     public Game() {
-        //This is new. It didn't work.
-        //System.out.println();
-        //System.out.println("This is the information of the player");
-            
-        Player playerOne = new Player();
-        
-        playerOne.setName("Ayami Martinez");
-        playerOne.setTotalTime(7.00);
-        
-        String playerOneName = playerOne.getName();
-        double playerOneTotalTime = playerOne.getTotalTime();
-        
-        System.out.println("Name = " + playerOneName + ", time = " + playerOneTotalTime);
-        
+    
     }
-    
-    
-    //This two lines are new. It didn't work.
-    public static void main(String[] args) {
-    }
-    
+
     public String getTotalTime() {
         return totalTime;
     }
