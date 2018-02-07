@@ -13,45 +13,33 @@ import java.util.Objects;
  * @author Randy Beckford
  */
 public class RiverScene implements Serializable{
-    private String riverDepth;
-    private String riverLength;
-    private double attribute;
+    private double riverDepth;
+    private double riverLength;
 
     public RiverScene() {
     }
 
-    
-    
-    public String getRiverDepth() {
+    public double getRiverDepth() {
         return riverDepth;
     }
 
-    public void setRiverDepth(String riverDepth) {
+    public void setRiverDepth(double riverDepth) {
         this.riverDepth = riverDepth;
     }
 
-    public String getRiverLength() {
+    public double getRiverLength() {
         return riverLength;
     }
 
-    public void setRiverLength(String riverLength) {
+    public void setRiverLength(double riverLength) {
         this.riverLength = riverLength;
-    }
-
-    public double getAttribute() {
-        return attribute;
-    }
-
-    public void setAttribute(double attribute) {
-        this.attribute = attribute;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + Objects.hashCode(this.riverDepth);
-        hash = 29 * hash + Objects.hashCode(this.riverLength);
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.attribute) ^ (Double.doubleToLongBits(this.attribute) >>> 32));
+        int hash = 7;
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.riverDepth) ^ (Double.doubleToLongBits(this.riverDepth) >>> 32));
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.riverLength) ^ (Double.doubleToLongBits(this.riverLength) >>> 32));
         return hash;
     }
 
@@ -67,13 +55,10 @@ public class RiverScene implements Serializable{
             return false;
         }
         final RiverScene other = (RiverScene) obj;
-        if (Double.doubleToLongBits(this.attribute) != Double.doubleToLongBits(other.attribute)) {
+        if (Double.doubleToLongBits(this.riverDepth) != Double.doubleToLongBits(other.riverDepth)) {
             return false;
         }
-        if (!Objects.equals(this.riverDepth, other.riverDepth)) {
-            return false;
-        }
-        if (!Objects.equals(this.riverLength, other.riverLength)) {
+        if (Double.doubleToLongBits(this.riverLength) != Double.doubleToLongBits(other.riverLength)) {
             return false;
         }
         return true;
@@ -81,10 +66,9 @@ public class RiverScene implements Serializable{
 
     @Override
     public String toString() {
-        return "RiverScene{" + "riverDepth=" + riverDepth + ", riverLength=" + riverLength + ", attribute=" + attribute + '}';
+        return "RiverScene{" + "riverDepth=" + riverDepth + ", riverLength=" + riverLength + '}';
     }
-    
-   
+
     
     
 }

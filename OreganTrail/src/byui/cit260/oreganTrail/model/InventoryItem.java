@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class InventoryItem implements Serializable{
     private String inventoryType;
-    private String qualityStock;
+    private double quantityStock;
     private double requiredAmount;
     private Game game;
     private ArrayList<ResourcesScene> resourcesScenes = new ArrayList<ResourcesScene>();
@@ -23,8 +23,6 @@ public class InventoryItem implements Serializable{
     public InventoryItem() {
     }
 
-    
-        
     public String getInventoryType() {
         return inventoryType;
     }
@@ -33,12 +31,12 @@ public class InventoryItem implements Serializable{
         this.inventoryType = inventoryType;
     }
 
-    public String getQualityStock() {
-        return qualityStock;
+    public double getQuantityStock() {
+        return quantityStock;
     }
 
-    public void setQualityStock(String qualityStock) {
-        this.qualityStock = qualityStock;
+    public void setQuantityStock(double quantityStock) {
+        this.quantityStock = quantityStock;
     }
 
     public double getRequiredAmount() {
@@ -65,14 +63,14 @@ public class InventoryItem implements Serializable{
         this.resourcesScenes = resourcesScenes;
     }
 
-    
-    
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.inventoryType);
-        hash = 97 * hash + Objects.hashCode(this.qualityStock);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
+        int hash = 3;
+        hash = 11 * hash + Objects.hashCode(this.inventoryType);
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.quantityStock) ^ (Double.doubleToLongBits(this.quantityStock) >>> 32));
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
+        hash = 11 * hash + Objects.hashCode(this.game);
+        hash = 11 * hash + Objects.hashCode(this.resourcesScenes);
         return hash;
     }
 
@@ -88,13 +86,19 @@ public class InventoryItem implements Serializable{
             return false;
         }
         final InventoryItem other = (InventoryItem) obj;
+        if (Double.doubleToLongBits(this.quantityStock) != Double.doubleToLongBits(other.quantityStock)) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.requiredAmount) != Double.doubleToLongBits(other.requiredAmount)) {
             return false;
         }
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
-        if (!Objects.equals(this.qualityStock, other.qualityStock)) {
+        if (!Objects.equals(this.game, other.game)) {
+            return false;
+        }
+        if (!Objects.equals(this.resourcesScenes, other.resourcesScenes)) {
             return false;
         }
         return true;
@@ -102,11 +106,10 @@ public class InventoryItem implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "inventoryType=" + inventoryType + ", qualityStock=" + qualityStock + ", requiredAmount=" + requiredAmount + '}';
+        return "InventoryItem{" + "inventoryType=" + inventoryType + ", quantityStock=" + quantityStock + ", requiredAmount=" + requiredAmount + ", game=" + game + ", resourcesScenes=" + resourcesScenes + '}';
     }
+
     
-    
-    
-    
-    
-}
+        
+
+    }

@@ -16,14 +16,12 @@ import java.util.Objects;
 public class Question implements Serializable{
     
     private String question;
-    private double answer;
+    private String answer;
     private ArrayList<QuestionScene> questionScenes = new ArrayList<QuestionScene>();
     
 
     public Question() {
     }
-    
-    
 
     public String getQuestion() {
         return question;
@@ -33,11 +31,11 @@ public class Question implements Serializable{
         this.question = question;
     }
 
-    public double getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(double answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 
@@ -49,13 +47,12 @@ public class Question implements Serializable{
         this.questionScenes = questionScenes;
     }
 
-    
-    
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.question);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.answer) ^ (Double.doubleToLongBits(this.answer) >>> 32));
+        int hash = 7;
+        hash = 61 * hash + Objects.hashCode(this.question);
+        hash = 61 * hash + Objects.hashCode(this.answer);
+        hash = 61 * hash + Objects.hashCode(this.questionScenes);
         return hash;
     }
 
@@ -71,10 +68,13 @@ public class Question implements Serializable{
             return false;
         }
         final Question other = (Question) obj;
-        if (Double.doubleToLongBits(this.answer) != Double.doubleToLongBits(other.answer)) {
+        if (!Objects.equals(this.question, other.question)) {
             return false;
         }
-        if (!Objects.equals(this.question, other.question)) {
+        if (!Objects.equals(this.answer, other.answer)) {
+            return false;
+        }
+        if (!Objects.equals(this.questionScenes, other.questionScenes)) {
             return false;
         }
         return true;
@@ -82,9 +82,8 @@ public class Question implements Serializable{
 
     @Override
     public String toString() {
-        return "Question{" + "question=" + question + ", answer=" + answer + '}';
+        return "Question{" + "question=" + question + ", answer=" + answer + ", questionScenes=" + questionScenes + '}';
     }
-    
     
     
     

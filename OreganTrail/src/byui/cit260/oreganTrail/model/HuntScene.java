@@ -14,20 +14,19 @@ import java.util.Objects;
  * @author Randy Beckford
  */
 public class HuntScene implements Serializable{
-    private Time time;
+    private double time;
     private String animal;
-    private String probability;
+    private double probability;
     private double food;
 
     public HuntScene() {
     }
-    
-    
-    public Time getTime() {
+
+    public double getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(double time) {
         this.time = time;
     }
 
@@ -39,11 +38,11 @@ public class HuntScene implements Serializable{
         this.animal = animal;
     }
 
-    public String getProbability() {
+    public double getProbability() {
         return probability;
     }
 
-    public void setProbability(String probability) {
+    public void setProbability(double probability) {
         this.probability = probability;
     }
 
@@ -58,10 +57,10 @@ public class HuntScene implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.time);
-        hash = 89 * hash + Objects.hashCode(this.animal);
-        hash = 89 * hash + Objects.hashCode(this.probability);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.food) ^ (Double.doubleToLongBits(this.food) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.time) ^ (Double.doubleToLongBits(this.time) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.animal);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.probability) ^ (Double.doubleToLongBits(this.probability) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.food) ^ (Double.doubleToLongBits(this.food) >>> 32));
         return hash;
     }
 
@@ -77,16 +76,16 @@ public class HuntScene implements Serializable{
             return false;
         }
         final HuntScene other = (HuntScene) obj;
+        if (Double.doubleToLongBits(this.time) != Double.doubleToLongBits(other.time)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.probability) != Double.doubleToLongBits(other.probability)) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.food) != Double.doubleToLongBits(other.food)) {
             return false;
         }
         if (!Objects.equals(this.animal, other.animal)) {
-            return false;
-        }
-        if (!Objects.equals(this.probability, other.probability)) {
-            return false;
-        }
-        if (!Objects.equals(this.time, other.time)) {
             return false;
         }
         return true;
@@ -98,7 +97,5 @@ public class HuntScene implements Serializable{
     }
     
     
-    
-         
-    
+     
 }

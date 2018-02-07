@@ -13,18 +13,14 @@ import java.util.Objects;
  * @author Randy Beckford
  */
 public class ResourcesScene implements Serializable{
-    private String amount;
+    private double amount;
     private InventoryItem inventoryItem;
 
-    public ResourcesScene() {
-    }
-
-    
-    public String getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -36,12 +32,11 @@ public class ResourcesScene implements Serializable{
         this.inventoryItem = inventoryItem;
     }
 
-    
-    
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.amount);
+        int hash = 3;
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.amount) ^ (Double.doubleToLongBits(this.amount) >>> 32));
+        hash = 71 * hash + Objects.hashCode(this.inventoryItem);
         return hash;
     }
 
@@ -57,7 +52,10 @@ public class ResourcesScene implements Serializable{
             return false;
         }
         final ResourcesScene other = (ResourcesScene) obj;
-        if (!Objects.equals(this.amount, other.amount)) {
+        if (Double.doubleToLongBits(this.amount) != Double.doubleToLongBits(other.amount)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventoryItem, other.inventoryItem)) {
             return false;
         }
         return true;
@@ -65,10 +63,8 @@ public class ResourcesScene implements Serializable{
 
     @Override
     public String toString() {
-        return "ResourcesScene{" + "amount=" + amount + '}';
+        return "ResourcesScene{" + "amount=" + amount + ", inventoryItem=" + inventoryItem + '}';
     }
-    
-    
-    
+
     
 }
