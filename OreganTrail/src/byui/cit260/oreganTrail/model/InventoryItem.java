@@ -24,6 +24,14 @@ public class InventoryItem implements Serializable{
     public InventoryItem() {
     }
 
+    public double getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(double itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
     public String getInventoryType() {
         return inventoryType;
     }
@@ -66,10 +74,11 @@ public class InventoryItem implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
+        int hash = 7;
         hash = 11 * hash + Objects.hashCode(this.inventoryType);
         hash = 11 * hash + (int) (Double.doubleToLongBits(this.quantityStock) ^ (Double.doubleToLongBits(this.quantityStock) >>> 32));
         hash = 11 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.itemPrice) ^ (Double.doubleToLongBits(this.itemPrice) >>> 32));
         hash = 11 * hash + Objects.hashCode(this.game);
         hash = 11 * hash + Objects.hashCode(this.resourcesScenes);
         return hash;
@@ -93,6 +102,9 @@ public class InventoryItem implements Serializable{
         if (Double.doubleToLongBits(this.requiredAmount) != Double.doubleToLongBits(other.requiredAmount)) {
             return false;
         }
+        if (Double.doubleToLongBits(this.itemPrice) != Double.doubleToLongBits(other.itemPrice)) {
+            return false;
+        }
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
@@ -107,10 +119,9 @@ public class InventoryItem implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "inventoryType=" + inventoryType + ", quantityStock=" + quantityStock + ", requiredAmount=" + requiredAmount + ", game=" + game + ", resourcesScenes=" + resourcesScenes + '}';
+        return "InventoryItem{" + "inventoryType=" + inventoryType + ", quantityStock=" + quantityStock + ", requiredAmount=" + requiredAmount + ", itemPrice=" + itemPrice + ", game=" + game + ", resourcesScenes=" + resourcesScenes + '}';
     }
 
-    
-        
+         
 
     }
