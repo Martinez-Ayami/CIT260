@@ -22,18 +22,30 @@ public class HuntControl {
             calcHuntScene = TRUE;
             food = +10
         }
-                 
-
-
-IF (Animal = Fox) and (Text = “BANG!”)
-THEN SUCCESS = (Random number between 1 and 100) + 80 
-IF SUCCESS > 100 THEN HuntSuccess = TRUE Food = +20 
-IF (Animal = Wolf) and (Text = “BANG!”)
-THEN SUCCESS = (Random number between 1 and 100) + 30 
-IF SUCCESS > 100 THEN HuntSuccess = TRUE Food = +40
-IF (Animal = Buffalo) and (Text = “BANG!”)
-THEN SUCCESS = (Random number between 1 and 100) + 50 
-IF SUCCESS > 100 THEN HuntSuccess = TRUE Food = +70
+        
+        if (animal == Fox || text = "BANG!"){
+            success = randomNum + 80;
+        }
+        if (success => 100) {
+            calcHuntScene = TRUE;
+            food = +20
+        }
+        
+        if (animal == Wolf || text = "BANG!"){
+            success = randomNum + 30;
+        }
+        if (success => 100) {
+            calcHuntScene = TRUE;
+            food = +40
+        }
+        
+        if (animal == Buffalo || text = "BANG!"){
+            success = randomNum + 50;
+        }
+        if (success => 100) {
+            calcHuntScene = TRUE;
+            food = +70
+        }
 
         
     }
