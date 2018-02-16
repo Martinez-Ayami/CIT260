@@ -10,5 +10,8 @@ package byui.cit260.oreganTrail.control;
  * @author ayami
  */
 public class RiverControl {
-    
+    public static double calcCrossRiverSuccess (double riverDepth, double riverLength){
+            if (riverDepth * riverLength >= 100)
+            return TRUE;
+    }
 }
