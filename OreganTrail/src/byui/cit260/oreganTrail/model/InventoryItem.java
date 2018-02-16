@@ -17,6 +17,7 @@ public class InventoryItem implements Serializable{
     private String inventoryType;
     private double quantityStock;
     private double requiredAmount;
+    private double itemPrice;
     private Game game;
     private ArrayList<ResourcesScene> resourcesScenes = new ArrayList<ResourcesScene>();
 

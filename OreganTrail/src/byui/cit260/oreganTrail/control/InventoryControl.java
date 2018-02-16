@@ -5,10 +5,25 @@
  */
 package byui.cit260.oreganTrail.control;
 
+import byui.cit260.oreganTrail.model.InventoryItem;
+
+
+
 /**
  *
  * @author ayami
  */
 public class InventoryControl {
     
+  public static double addInventoryItem(double itemPrice, double amount)
+  {
+      //InventoryItem
+      
+      if (amount > 9 || itemPrice > 99){
+          
+            return -1 ;
+         
+      }   
+  }          
 }
+
