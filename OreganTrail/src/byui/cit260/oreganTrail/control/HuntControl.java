@@ -16,7 +16,7 @@ public class HuntControl {
         int min = 1;
         Random randomNum = new Random();
         if (animal == Rabbit || text = "BANG!"){
-            success = randomNum.nextInt(max + 90;
+            success = randomNum.nextInt(max) + 90;
         }
         if (success => 100) {
             calcHuntScene = TRUE;
@@ -32,7 +32,7 @@ public class HuntControl {
         }
         
         if (animal == Wolf || text = "BANG!"){
-            success = randomNum.nextInt(max + 30;
+            success = randomNum.nextInt(max) + 30;
         }
         if (success => 100) {
             calcHuntScene = TRUE;
@@ -40,7 +40,7 @@ public class HuntControl {
         }
         
         if (animal == Buffalo || text = "BANG!"){
-            success = randomNum.nextInt(max + 50;
+            success = randomNum.nextInt(max) + 50;
         }
         if (success => 100) {
             calcHuntScene = TRUE;
