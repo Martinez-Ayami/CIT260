@@ -4,14 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.oreganTrail.control;
-
+import byui.cit260.oreganTrail.model.RiverScene;
 /**
  *
  * @author ayami
  */
 public class RiverControl {
     public static double calcCrossRiverSuccess (double riverDepth, double riverLength){
-            if (riverDepth * riverLength >= 100)
-            return TRUE;
+            if (riverDepth < 1){
+            return -1;
+            }
+            if (riverLength < 1){
+            return -1;
+            }
+            
+            double crossRiverSuccess = riverLength * riverDepth;
+            return crossRiverSuccess;
     }
 }
