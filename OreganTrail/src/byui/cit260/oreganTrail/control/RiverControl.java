@@ -11,10 +11,10 @@ import byui.cit260.oreganTrail.model.RiverScene;
  */
 public class RiverControl {
     public static double calcCrossRiverSuccess (double riverDepth, double riverLength){
-            if (riverDepth < 1){
+            if (riverDepth <= 0){
             return -1;
             }
-            if (riverLength < 1){
+            if (riverLength <= 0){
             return -1;
             }
             
