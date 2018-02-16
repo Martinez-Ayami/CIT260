@@ -31,5 +31,22 @@ public class RiverControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    @Test
+   public void testCalcCrossRiverSuccess() {
+        System.out.println("calcCrossRiverSuccess");
+        
+      //teat case 1
+        System.out.println("\tTest case 1")
+          double riverDepth = 0.0;
+        double riverLength = 0.0;
+        double expResult = 0.0;
+        double result = RiverControl.calcCrossRiverSuccess(riverDepth, riverLength);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+        
     
+    
+    
+   }
 }
