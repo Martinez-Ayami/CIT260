@@ -11,28 +11,37 @@ import java.util.Random;
  * @author ayami
  */
 public class HuntControl {
-    public static double calcHuntScene (String animal, String textBang){
-        double food = new Food;
+    
+    
+    
+    public static double calcHuntScene (String textBang){
+        int food = 0;
         int max = 100;
         int min = 0;
         Random randomNum = new Random();
-        if (animal == Rabbit || textBang == "BANG!" || randomNum.nextInt(max-min) + 90 >= 100){
+        String[] animalList = {"Rabbit", "Fox", "Wolf", "Buffalo"};
+        
+        String animal = animalList[randomNum.nextInt(animalList.length)];
+        
+        if ("Rabbit".equals(animal) && "BANG!".equals(textBang) && randomNum.nextInt(max-min) + 90 >= 100){
             food = +10;
         }
         
-        else if (animal == Fox || textBang == "BANG!" || randomNum.nextInt(max-min) + 80 >= 100){
+        else if ("Fox".equals(animal) && "BANG!".equals(textBang) && randomNum.nextInt(max-min) + 80 >= 100){
             food = +20;
         }
         
-        else if (animal == Wolf || textBang == "BANG!" || randomNum.nextInt(max-min) + 30 >= 100){
+        else if ("Wolf".equals(animal) && "BANG!".equals(textBang) && randomNum.nextInt(max-min) + 30 >= 100){
             food = +40;
         }
         
-        else if (animal == Buffalo || textBang == "BANG!" || randomNum.nextInt(max-min) + 50 >= 100){
+        else if ("Buffalo".equals(animal) && "BANG!".equals(textBang) && randomNum.nextInt(max-min) + 50 >= 100){
             food = +70;
         }
         
         else return -1;
         return food;
     }
+
+    
 }
