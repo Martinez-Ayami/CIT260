@@ -11,42 +11,28 @@ import java.util.Random;
  * @author ayami
  */
 public class HuntControl {
-    public static double calcHuntScene (String animal, StringtextBang){
+    public static double calcHuntScene (String animal, String textBang){
+        double food = new Food;
         int max = 100;
-        int min = 1;
+        int min = 0;
         Random randomNum = new Random();
-        if (animal == Rabbit || text = "BANG!"){
-            success = randomNum.nextInt(max) + 90;
-        }
-        if (success => 100) {
-            calcHuntScene = TRUE;
-            food = +10
+        if (animal == Rabbit || textBang == "BANG!" || randomNum.nextInt(max-min) + 90 >= 100){
+            food = +10;
         }
         
-        if (animal == Fox || text = "BANG!"){
-            success = randomNum.nextInt(max) + 80;
-        }
-        if (success => 100) {
-            calcHuntScene = TRUE;
-            food = +20
+        else if (animal == Fox || textBang == "BANG!" || randomNum.nextInt(max-min) + 80 >= 100){
+            food = +20;
         }
         
-        if (animal == Wolf || text = "BANG!"){
-            success = randomNum.nextInt(max) + 30;
-        }
-        if (success => 100) {
-            calcHuntScene = TRUE;
-            food = +40
+        else if (animal == Wolf || textBang == "BANG!" || randomNum.nextInt(max-min) + 30 >= 100){
+            food = +40;
         }
         
-        if (animal == Buffalo || text = "BANG!"){
-            success = randomNum.nextInt(max) + 50;
+        else if (animal == Buffalo || textBang == "BANG!" || randomNum.nextInt(max-min) + 50 >= 100){
+            food = +70;
         }
-        if (success => 100) {
-            calcHuntScene = TRUE;
-            food = +70
-        }
-
         
+        else return -1;
+        return food;
     }
 }
