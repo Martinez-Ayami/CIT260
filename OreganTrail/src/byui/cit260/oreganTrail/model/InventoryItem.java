@@ -122,6 +122,7 @@ public class InventoryItem implements Serializable{
         return "InventoryItem{" + "inventoryType=" + inventoryType + ", quantityStock=" + quantityStock + ", requiredAmount=" + requiredAmount + ", itemPrice=" + itemPrice + ", game=" + game + ", resourcesScenes=" + resourcesScenes + '}';
     }
 
+ 
          
 
     }

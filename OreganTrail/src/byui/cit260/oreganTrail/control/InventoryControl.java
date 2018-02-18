@@ -7,8 +7,6 @@ package byui.cit260.oreganTrail.control;
 
 import byui.cit260.oreganTrail.model.InventoryItem;
 
-
-
 /**
  *
  * @author ayami

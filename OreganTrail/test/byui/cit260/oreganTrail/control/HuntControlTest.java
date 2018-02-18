@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Randy Beckford
+ * @author Randy ther Master
  */
 public class HuntControlTest {
     
@@ -23,10 +23,9 @@ public class HuntControlTest {
     @Test
     public void testCalcHuntScene() {
         System.out.println("calcHuntScene");
-        String animal = "";
-        StringtextBang = null;
+        String textBang = "";
         double expResult = 0.0;
-        double result = HuntControl.calcHuntScene(animal, <error>);
+        double result = HuntControl.calcHuntScene(textBang);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
