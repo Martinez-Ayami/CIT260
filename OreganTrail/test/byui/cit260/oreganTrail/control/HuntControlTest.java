@@ -23,12 +23,14 @@ public class HuntControlTest {
     @Test
     public void testCalcHuntScene() {
         System.out.println("calcHuntScene");
+        //Test Case 1
+        System.out.println("\tTest case 1");
         String textBang = "";
-        double expResult = 0.0;
+        double expResult = 80.0;
         double result = HuntControl.calcHuntScene(textBang);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0.0001);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -18,7 +18,7 @@ public class RiverControl {
             return -1;
             }
             
-            double crossRiverSuccess = riverLength * riverDepth;
+            double crossRiverSuccess = riverDepth * riverLength  ;
             return crossRiverSuccess;
     }
 }

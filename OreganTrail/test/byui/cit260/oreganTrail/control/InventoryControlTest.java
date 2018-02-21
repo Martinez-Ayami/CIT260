@@ -34,15 +34,14 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
       
 
-    System.out.println("\tTest case 2");
+         System.out.println("\tTest case 2");
          itemPrice = 2.0;
          amount = 0.0;
          expResult = 0.0;
          result = InventoryControl.addInventoryItem(itemPrice, amount);
-        assertEquals(expResult, result, 0.0001);
+         assertEquals(expResult, result, 0.0001);
  
-
-        
+  
         System.out.println("\tTest case 3");
          itemPrice = 2.0;
          amount = 0-3.0;
