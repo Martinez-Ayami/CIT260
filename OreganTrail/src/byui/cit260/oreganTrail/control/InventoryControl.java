@@ -17,11 +17,17 @@ public class InventoryControl {
   {
       //InventoryItem
       
-      if (amount > 9 || itemPrice > 99){
+      if (amount > 9 ){
           
             return -1 ;
-         
-      }   
+       }   
+      if ( itemPrice > 99){
+          
+          return -1;
+      }
+      double total = itemPrice * amount;
+      
+      return total;
   }          
 }
 
